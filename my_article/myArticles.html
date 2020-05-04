@@ -1,0 +1,385 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="my_article.css" />
+  </head>
+  <body>
+
+    <!-- ==============Header =================-->
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+            <!-- logo和標題 -->
+            <nav class="navbar navbar-light bg-danger">
+                  <a class="navbar-brand" href="#">
+    <img src="https://github.com/sun0722a/yaoshula/blob/master/src/logo/logo_for_nav.png?raw=true" width="150" height="50" alt="logo">
+  </a>
+              </nav>
+            <!-- 收縮成漢堡 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- ============left menu=================== -->
+              <ul class="navbar-nav mr-auto">
+                  <!-- 下拉一 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      論壇
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">天使版</a>
+                      <a class="dropdown-item" href="#">惡魔版</a>
+                      <a class="dropdown-item" href="#">漂流瓶</a>
+                  </li>
+                  <!-- 下拉二 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      商城
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">商城首頁</a>
+                      <a class="dropdown-item" href="#">我的購物車</a>
+                      <a class="dropdown-item" href="#">歷史訂單</a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    關於
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">創站理念</a>
+                    <a class="dropdown-item" href="#">團隊介紹</a>
+                    <a class="dropdown-item" href="#">聯絡我們</a>
+                </li>
+              </ul>
+
+          <!-- ============right menu=================== -->
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">會員登入</a>
+            </li>
+          </ul>
+            </div>
+          </nav>
+    </div>
+
+    <!-- ======main=======文章列表從這裡開始 -->
+
+    <div id="article-area-title" class="h1 mb-4 d-flex justify-content-center" style="margin-top: 110px;">
+      <strong >我的文章列表</strong>
+    </div>
+
+    <!-- 文章列表 -->
+    <section id="nayma-timeline" class="nayma-container mx-auto mt-2 pt-3">
+      <div class="d-flex" style="margin:0px -15px 0px 60px">
+        <!-- 搜尋欄 -->
+        <div class="wrap mr-2 shadow">
+          <div class="search">
+            <input
+              type="text"
+              class="searchTerm"
+              placeholder="輸入關鍵字尋找文章"
+            />
+            <button type="submit" class="searchButton">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 排序選項 -->
+        <div class="btn-group shadow" id="filter-btn">
+          <button
+            id="by-date"
+            type="button"
+            class="btn text-white"
+            style="background-color: #005caf;"
+          >
+            依日期<i class="bx bx-calendar-star ml-1"></i>
+          </button>
+          <button
+            id="by-popular"
+            type="button"
+            class="btn text-white"
+            style="background-color: #005caf;"
+          >
+            依熱門<i class="bx bxs-hot ml-1"></i>
+          </button>
+        </div>
+      </div>
+      <!-- 這是一組開始 -->
+      <div class="nayma-timeline-block">
+        <!-- 藍色點點 -->
+        <div class="nayma-timeline-img"></div>
+        <!-- 白色對話框 -->
+        <div class="row nayma-timeline-content">
+          <!-- 使用者頭貼 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png"
+              class="rounded-circle"
+              alt="avatar"
+            />
+          </div>
+          <!-- 文章詳情 -->
+          <div class="col-8">
+            <!-- 文章標題 -->
+            <h2 class="mt-2">老闆說加班當做功德啦！</h2>
+            <!-- 文章分類 -->
+            <span
+              class="badge mr-2 mt-1 text-white"
+              style="background-color: #005caf;"
+              >惡魔</span
+            >
+            <span class="badge badge-info mr-2 mt-1">工作</span>
+            <!-- 文章內容預覽 -->
+            <p class="JQellipsis">
+              主病國動維得然一草，感應由的美藝後為。是安力以其：子另格容前平得所是發一民且，記自的個就經……用遠一居市作力者引眾對驗錢動夜醫推花數什預物這竟林響四顯王此個沒從目後頭解定還關是岸是日部，得第高親……代算年往畫自示校趣廣交文部反期著臺如書力排相，力而動長驚林日聯難卻然春本書考滿：務立便小觀。師基務策的禮無，則麼國！該樓不然綠旅即我水下無下預眾、說地雲，作北心證三觀？可銷能命時人計時離現名進員比布不他答民最了古史四平中力！票門機同形、斷專合製品毒車字史親公藝面外的在流你？
+            </p>
+            <!-- 文章資訊列 -->
+            <div class="row d-flex align-items-center mb-2">
+              <!-- 發表日期 -->
+              <p class="my-0 col-4 text-secondary">發表於2020/04/22 18:32</p>
+              <!-- 愛心數 -->
+              <i class="my-0 p-0 h5 bx bx-heart-circle col-1 text-danger"
+                ><span class="h6 ml-1 text-secondary">15</span></i
+              >
+              <!-- 留言數 -->
+              <i class="my-0 h5 bx bx-message-detail col-1 text-info"
+                ><span class="h6 ml-1 text-secondary">10</span></i
+              >
+            </div>
+          </div>
+          <!-- 文章照片 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://memeprod.sgp1.digitaloceanspaces.com/user-template-thumbnail/03f01617946e73cbcb2259e47a4a69ca.jpg"
+              class=" "
+              alt="avatar"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 這是一組結束 -->
+      <!-- 這是一組開始 -->
+      <div class="nayma-timeline-block">
+        <!-- 藍色點點 -->
+        <div class="nayma-timeline-img"></div>
+        <!-- 白色對話框 -->
+        <div class="row nayma-timeline-content">
+          <!-- 使用者頭貼 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png"
+              class="rounded-circle"
+              alt="avatar"
+            />
+          </div>
+          <!-- 文章詳情 -->
+          <div class="col-8">
+            <!-- 文章標題 -->
+            <h2 class="mt-2">女友暗示我要買戒指...</h2>
+            <!-- 文章分類 -->
+            <span
+              class="badge mr-2 mt-1 text-white"
+              style="background-color: pink;"
+              >天使</span
+            >
+            <span class="badge badge-danger mr-2 mt-1">感情</span>
+            <!-- 文章內容預覽 -->
+            <p class="JQellipsis">
+球在金工最作得轉非，的對眼解麼又越目又給以本；電來機頭理當了國金手地世果全河前公統會身是緊銷來美實同作，只然好修水員服是院布決林重養物可上……語系是化感口時地談主出在節方前童馬全幾門去你，爾交可的牛度認代術點了，事禮果大可落形藝球論一何是公覺中對光，會全你自發道事中空養更小體反個供工語配學；們高事義岸……可千讀電位，時我記麼獲展場備生於司育決麼過成一；濟的當得孩孩理可甚無的些出人濟灣。社且生極都你臺為上張港農，小己頭正老想。事特門。
+            </p>
+            <!-- 文章資訊列 -->
+            <div class="row d-flex align-items-center mb-2">
+              <!-- 發表日期 -->
+              <p class="my-0 col-4 text-secondary">發表於2020/03/14 22:45</p>
+              <!-- 愛心數 -->
+              <i class="my-0 p-0 h5 bx bx-heart-circle col-1 text-danger"
+                ><span class="h6 ml-1 text-secondary">24</span></i
+              >
+              <!-- 留言數 -->
+              <i class="my-0 h5 bx bx-message-detail col-1 text-info"
+                ><span class="h6 ml-1 text-secondary">11</span></i
+              >
+            </div>
+          </div>
+          <!-- 文章照片 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQ1tKDV6US19fVGk5iW7bzlz_av-x6-84uama8oWewDTnTg46S&usqp=CAU"
+              class=" "
+              alt="avatar"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 這是一組結束 -->
+            <!-- 這是一組開始 -->
+      <div class="nayma-timeline-block">
+        <!-- 藍色點點 -->
+        <div class="nayma-timeline-img"></div>
+        <!-- 白色對話框 -->
+        <div class="row nayma-timeline-content">
+          <!-- 使用者頭貼 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png"
+              class="rounded-circle"
+              alt="avatar"
+            />
+          </div>
+          <!-- 文章詳情 -->
+          <div class="col-8">
+            <!-- 文章標題 -->
+            <h2 class="mt-2">受盡委屈的一天QAQ</h2>
+            <!-- 文章分類 -->
+            <span
+              class="badge mr-2 mt-1 text-white"
+              style="background-color: #005caf;"
+              >惡魔</span
+            >
+            <span class="badge badge-warning mr-2 mt-1">生活</span>
+            <!-- 文章內容預覽 -->
+            <p class="JQellipsis">
+麼處課這所留我為長當我如味。方子照念預大開手室可專，們活不於我。不否禮園條洋。好親臺改然於冷們難成國來構食機白起黑：解醫事快時年可總爸走會不境院公陸係！漸現上了命心一；我相以格，果灣算，一許技司防都人不場影方使標。對意外票然、完的就我無土得政通了試全第色得全說質展書著河國國定。又快光們我去股車們詩動下速明的安！題去的？公數機天，作時開習那單獎到母。
+            </p>
+            <!-- 文章資訊列 -->
+            <div class="row d-flex align-items-center mb-2">
+              <!-- 發表日期 -->
+              <p class="my-0 col-4 text-secondary">發表於2020/03/14 22:45</p>
+              <!-- 愛心數 -->
+              <i class="my-0 p-0 h5 bx bx-heart-circle col-1 text-danger"
+                ><span class="h6 ml-1 text-secondary">33</span></i
+              >
+              <!-- 留言數 -->
+              <i class="my-0 h5 bx bx-message-detail col-1 text-info"
+                ><span class="h6 ml-1 text-secondary">22</span></i
+              >
+            </div>
+          </div>
+          <!-- 文章照片 -->
+          <div class="col-2 d-flex align-items-center justify-content-center">
+            <img
+              src="https://holiday.imgix.net/wp-content/uploads/2019/06/60734707_2249483948476580_2995110524083639063_n.jpg"
+              class=" "
+              alt="avatar"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 這是一組結束 -->
+    </section>
+
+<!--========= footer================= -->
+<footer class="page-footer font-small pt-5" style="background-color: #f9fafb;">
+  <div class="container text-center text-md-left">
+    <div class="row">
+      <div class="col-md-2 d-flex justify-content-center align-items-center">
+        <img
+          src="https://github.com/sun0722a/yaoshula/blob/master/src/logo/logo_trans_140px.png?raw=true"
+          alt=""
+        />
+      </div>
+
+      <div class="col-md-4 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
+          要抒啦！ 論壇&商城
+        </h5>
+        <p>
+          是個能夠預期回應溫度的論壇空間。無論感情、生活、工作、時事都可以聊，還附設購物商城「要買啦！💸」，各種新奇有趣的商品都在這裡。
+        </p>
+      </div>
+
+      <hr class="clearfix w-100 d-md-none" />
+
+      <div class="col-md-2 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">論壇</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">天使版</a>
+          </li>
+          <li>
+            <a href="#!">惡魔版</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="clearfix w-100 d-md-none" />
+
+      <div class="col-md-2 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">商城</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">商城首頁</a>
+          </li>
+          <li>
+            <a href="#!">我的購物車</a>
+          </li>
+          <li>
+            <a href="#!">歷史訂單</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="clearfix w-100 d-md-none" />
+
+      <div class="col-md-2 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">關於我們</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">創站理念</a>
+          </li>
+          <li>
+            <a href="#!">團隊介紹</a>
+          </li>
+          <li>
+            <a href="#!">聯絡我們</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center pb-4">
+    © 2020 Copyright © 2020 Speak It Up. All rights reserved
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
