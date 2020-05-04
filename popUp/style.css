@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+
+.modal-content{
+  background:url('https://i.imgur.com/Ee58jD8.png');
+  width:420px;
+  height:210px;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+*{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.modal-body{
+  color:#1A3854;
+}
+.modal-header{
+    border:0px;
+}
