@@ -29,7 +29,7 @@
       href="http://jqueryui.com/resources/demos/style.css"
     />
     <!-- my css -->
-    <link rel="stylesheet" href="../css/_01_register/register.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/_01_register/register.css" />
     <title>Register</title>
   </head>
 
@@ -239,7 +239,7 @@
                     </div>
                   </div>
                   <input
-                    class="btn btn-primary btn-user btn-block mt-3"
+                    class="btn btn-primary btn-user btn-block mt-2"
                     id="btSubmit"
                     type="submit"
                     value="註冊帳號"
@@ -381,7 +381,7 @@
       src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"
     ></script>
     <!-- Template Main JS File -->
-    <script src="../js/_01_register/register.js"></script>
+    <script src="${pageContext.request.contextPath}/js/_01_register/register.js"></script>
     <script>
       let date = new Date()
       let year = date.getFullYear()
