@@ -1,35 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
-
-*{
-    box-sizing: border-box;
-    font-family: 'Noto Sans TC', sans-serif !important; 
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif !important;
 }
 
 body {
-    position: relative;
-  }
+  position: relative;
+}
 /* #left{
     border: 1px red solid;
 }
 #right{
     border: 1px red solid;
 } */
-#personPage{
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+#personPage {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
-#header{
-    border-bottom: white 1px solid;
+#header {
+  border-bottom: white 1px solid;
 }
 
-#boxHeadPicture img{
-    width: 120px;
+#boxHeadPicture img {
+  width: 120px;
 }
-.card ul li:hover{
-   background-color:#C4BEBE;
-   color: white;
-   cursor: pointer;
+.card ul li:hover {
+  background-color: #c4bebe;
+  color: white;
+  cursor: pointer;
 }
-.list-unstyled li a{
-    color:#033C73
-  }
+.list-unstyled li a {
+  color: #033c73;
+}
